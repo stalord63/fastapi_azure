@@ -49,7 +49,7 @@ jobs:
 
       - name: Get AKS credentials
         run: |
-          az aks get-credentials --resource-group $RESOURCE_GROUP --name $CLUSTER_NAME
+          az aks get-credentials --resource-group $AKS_RESOURCE_GROUP --name $AKS_CLUSTER_NAME
 
       - name: Deploy to AKS using kubectl
         run: |
