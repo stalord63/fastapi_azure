@@ -18,12 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login to Azure
-        uses: azure/login@v2
+      - name: Azure Login
+        uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7400181F2AF14E239BC25B54675655C0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_88BBDEAAA0B947938CD0E29F8F3C8CD5 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E17FF599DDE0428F9CE3B2E70075EF70 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Log in to ACR
         uses: azure/docker-login@v1
