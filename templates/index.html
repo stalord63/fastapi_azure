@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI Web App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <form id="greetForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button type="submit">Greet</button>
+    </form>
+    <p id="greeting"></p>
+
+    <script>
+        document.getElementById('greetForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const response = await fetch(`/api/greet?name=${name}`);
+            const data = await response.json();
+            document.getElementById('greeting').textContent = data.message;
+        };
+    </script>
+</body>
+</html>
