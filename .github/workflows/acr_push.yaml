@@ -54,7 +54,8 @@ jobs:
       - name: Deploy to AKS using kubectl
         run: |
           IMAGE=${ACR_NAME}.azurecr.io/${IMAGE_NAME}:${{ github.sha }}
-
+          pwd
+          ls
           kubectl apply -f k8s/deployment.yaml
           kubectl apply -f k8s/service.yaml
           kubectl set image deployment/fastapi-deployment fastapi=$IMAGE
