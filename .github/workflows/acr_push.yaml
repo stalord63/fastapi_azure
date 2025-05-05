@@ -9,7 +9,7 @@ on:
 env:
   ACR_NAME: stalordtest  # e.g., stalordregistry
   IMAGE_NAME: fastapiapp
-  APP_NAME: stalord
+  APP_NAME: ghatest
   RESOURCE_GROUP: stalordrg # Resource group for the Web App
 
 jobs:
